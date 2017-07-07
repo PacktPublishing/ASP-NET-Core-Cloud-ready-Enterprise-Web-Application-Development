@@ -1,0 +1,7 @@
+﻿{
+	"Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Data Source=MUGIL-PC\\SQLEXPRESS;Initial Catalog=Validation;Integrated Security=True"
+    }
+	}
+}

@@ -1,0 +1,53 @@
+﻿@model MVCEF.ViewModels.EmployeeAddViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div>
+   @using (Html.BeginForm("Index", "Employee", FormMethod.Post))
+   {       
+       <table>
+           <tr>
+               <td>@Html.LabelFor(Model => Model.NewEmployee.Name)</td>
+               <td>@Html.TextBoxFor(Model => Model.NewEmployee.Name)</td>
+           </tr>
+           <tr>
+               <td>@Html.LabelFor(Model => Model.NewEmployee.Designation)</td>
+               <td>@Html.TextBoxFor(Model => Model.NewEmployee.Designation)</td>
+           </tr>
+           <tr>
+               <td>@Html.LabelFor(Model => Model.NewEmployee.Salary)</td>
+               <td>@Html.TextBoxFor(Model => Model.NewEmployee.Salary)</td>
+           </tr>
+           <tr>
+               <td colspan="2"><input type="submit" value="Submit" /></td>
+           </tr>
+       </table>
+
+   }
+</div>
+
+<br/><br/> <br/>
+
+<b> List of employees:</b> <br/>
+<div>
+    <table border="1">
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Designation </th>
+            <th> Salary </th>
+        </tr>
+        @foreach(var employee in Model.EmployeesList)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.Name</td>
+                <td>@employee.Designation</td>
+                <td>@employee.Salary</td>
+            </tr>
+        }
+    </table>
+</div>

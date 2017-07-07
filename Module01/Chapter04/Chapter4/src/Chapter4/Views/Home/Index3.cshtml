@@ -1,0 +1,16 @@
+﻿@model Chapter4.Models.Person
+<form asp-controller="Home" asp-action="Index3">
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Age"></label></td>
+            <td><input asp-for="Age" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>

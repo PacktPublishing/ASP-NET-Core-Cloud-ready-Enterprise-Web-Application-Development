@@ -1,0 +1,73 @@
+﻿@model Chapter4.Models.Person
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*<form>
+    <table>
+        <tr>
+            <td> 
+                <label for="txtName">Name</label>
+            </td>
+            <td>
+                <input type="text" id="txtName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="txtAge">Age</label>
+            </td>
+            <td>
+                <input type="text" id="txtAge" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" title="Submit" />
+            </td>
+        </tr>
+    </table> 
+</form>*@
+
+@*@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>@Html.Label("Name")</td>
+            <td>@Html.TextBox("txtName")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Age")</td>
+            <td>@Html.TextBox("txtAge")</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>    
+}*@
+
+@if(ViewBag.Message!=null)
+{
+    <b>@ViewBag.Message</b>
+}
+@using (Html.BeginForm("ValidateAge", "Home", FormMethod.Post))
+{
+    <div>
+        <email>scott@gmail.com</email>
+    </div>
+    <table>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Name) </td>
+            <td>@Html.TextBoxFor(Model => Model.Name) </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Age)</td>
+            <td>@Html.TextBoxFor(Model => Model.Age)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+}

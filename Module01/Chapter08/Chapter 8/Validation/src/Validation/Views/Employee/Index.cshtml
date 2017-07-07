@@ -1,0 +1,117 @@
+﻿@model Validation.ViewModels.EmployeeAddViewModel
+
+
+
+<div>
+    <br/>
+    <br/>
+    <form asp-controller="Employee" asp-action="Index" method="post" role="form" class="form-horizontal">
+        
+        <div class="form-group">
+            <label asp-for="Name" class="col-sm-2 control-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="col-sm-3 text-danger">
+                <span id="validationName" asp-validation-for="Name" ></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Designation" class="col-sm-2 control-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="Designation" class="form-control" />
+            </div>
+            <div class="col-sm-3 text-danger">
+                <span id="validationDesignation" asp-validation-for="Designation" ></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Salary" class="col-sm-2 control-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="Salary" class="form-control" />
+            </div>
+            <div class="col-sm-3 text-danger">
+                <span id="validationSalary" asp-validation-for="Salary" ></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+        
+    </form>
+   
+</div>
+
+<br /><br /> <br />
+
+<h4> List of employees:</h4> <br />
+
+    <table class="table table-bordered">
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Designation </th>
+            <th> Salary </th>
+        </tr>
+        @foreach (var employee in Model.EmployeesList)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.Name</td>
+                <td>@employee.Designation</td>
+                <td>@employee.Salary</td>
+            </tr>
+        }
+    </table>
+
+
+
+
+
+
+<div>
+    @*<script type="text/javascript">
+
+        function validateForm() {
+            var isValidForm = true;
+            var nameValue = document.getElementById("Name").value;
+            var designationValue = document.getElementById("Designation").value;
+            var salaryValue = document.getElementById("Salary").value;
+
+
+            //Validate the name field
+            if (nameValue == null || nameValue == "") {
+                document.getElementById("validationName").textContent = "Employee Name is required - from client side";
+                isValidForm = false;
+            }
+
+            //validate the designation field
+            if (designationValue == null || designationValue == "") {
+                document.getElementById("validationDesignation").textContent = "Employee Designation is required - from client side";
+                isValidForm = false;
+            }
+
+            //validate the salary field - if it is empty
+            if (salaryValue == null || salaryValue == "") {
+                document.getElementById("validationSalary").textContent = "Employee Salary is required - from client side";
+                isValidForm = false;
+            }else if (Number(salaryValue) == NaN || Number(salaryValue)<=0.0) {
+                document.getElementById("validationSalary").textContent = "Please enter valid number for salary field - from client side";
+                isValidForm = false;
+            }
+
+                        
+            return isValidForm;           
+
+        }
+
+    </script>*@
+</div>
+

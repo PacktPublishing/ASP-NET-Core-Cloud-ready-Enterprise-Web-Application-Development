@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<html>
+<head>
+    <title> Views demo</title>
+</head>
+<body>
+    <ul>
+        @{
+            List<int> integers = new List<int>
+            {
+                1,2,3,4,5
+            };
+
+            foreach (int i in integers)
+            {
+                <li>@i</li>
+            }
+
+        }
+    </ul>           
+</body>
+</html>
