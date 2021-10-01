@@ -6,7 +6,7 @@ using Microsoft.AspNet.Mvc;
 
 namespace Chapter4.ViewComponents
 {
-    public class SimpleViewComponent :ViewComponent
+    public class Simple :ViewComponent
     {        
         public IViewComponentResult Invoke()
         {
